@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIVTECH – Computer Service & Repair | Computer Village, Ikeja Lagos</title>
+<meta name="description" content="Expert computer repair, laptop fix, system tune-up, gadgets & accessories in Computer Village, Ikeja, Lagos. Fast, affordable, trusted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --navy: #0D1B5E;
+    --navy-dark: #080f3a;
+    --accent: #2563EB;
+    --accent-hover: #1d4ed8;
+    --white: #ffffff;
+    --light-bg: #F0F4FF;
+    --grey-text: #6b7280;
+    --border: #e5e7eb;
+    --whatsapp: #25D366;
+    --whatsapp-hover: #1da851;
+    --card-shadow: 0 4px 24px rgba(13,27,94,0.10);
+    --card-shadow-hover: 0 8px 40px rgba(13,27,94,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a2e;
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; }
+
+  /* ===================== NAVBAR ===================== */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(13,27,94,0.08);
+    transition: box-shadow 0.3s;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 14.5px;
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--whatsapp);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav-cta:hover { background: var(--whatsapp-hover); transform: translateY(-1px); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 18px 24px 24px;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(13,27,94,0.08);
+  }
+
+  .mobile-menu.active { display: flex; }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--accent); }
+
+  .mobile-menu .nav-cta {
+    margin-top: 12px;
+    justify-content: center;
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 15px;
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 90px 24px 80px;
+    text-align: center;
+  }
+
+  /* Circuit SVG pattern */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232563EB' stroke-width='0.6' opacity='0.25'%3E%3Crect x='10' y='10' width='60' height='60' rx='4'/%3E%3Ccircle cx='10' cy='10' r='3'/%3E%3Ccircle cx='70' cy='10' r='3'/%3E%3Ccircle cx='10' cy='70' r='3'/%3E%3Ccircle cx='70' cy='70' r='3'/%3E%3Cline x1='10' y1='40' x2='30' y2='40'/%3E%3Cline x1='50' y1='40' x2='70' y2='40'/%3E%3Cline x1='40' y1='10' x2='40' y2='30'/%3E%3Cline x1='40' y1='50' x2='40' y2='70'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  /* Glow orbs */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-glow-left {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(37,99,235,0.2);
+    border: 1px solid rgba(37,99,235,0.4);
+    color: #93c5fd;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 span { color: #60a5fa; }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: #93c5fd;
+    margin-bottom: 36px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+  }
+
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,0.5); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: transparent;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.6);
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-2px); }
+
+  .hero-trust {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #e0e7ff;
+    padding: 9px 18px;
+    border-radius: 100px;
+    font-size: 13.5px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ===================== SECTION COMMON ===================== */
+  .section { padding: 80px 24px; }
+
+  .section-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 52px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: #eff6ff;
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 100px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    color: var(--grey-text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ===================== SERVICES ===================== */
+  .services-bg { background: #fff; }
+
+  .services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid #e8edf8;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--light-bg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .service-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .service-card p {
+    color: var(--grey-text);
+    font-size: 14.5px;
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 4px;
+    transition: gap 0.2s;
+  }
+
+  .service-link:hover { gap: 10px; }
+
+  /* ===================== GADGETS ===================== */
+  .gadgets-bg { background: var(--light-bg); }
+
+  .products-grid {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e8edf8;
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); }
+
+  .product-img {
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--accent);
+  }
+
+  .product-body {
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .product-body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .product-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #dcfce7;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .btn-green {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--whatsapp);
+    color: #fff;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    font-family: 'Poppins', sans-serif;
+    margin-top: auto;
+  }
+
+  .btn-green:hover { background: var(--whatsapp-hover); transform: translateY(-1px); }
+
+  .gadgets-banner {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2f8f 100%);
+    border-radius: 16px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 32px rgba(13,27,94,0.2);
+  }
+
+  .gadgets-banner p {
+    color: #e0e7ff;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .gadgets-banner strong { color: #fff; }
+
+  /* ===================== WHY CHOOSE US ===================== */
+  .why-bg { background: var(--light-bg); }
+
+  .why-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e8edf8;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .why-card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow-hover); }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 26px;
+    margin: 0 auto 20px;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.35);
+  }
+
+  .why-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    color: var(--grey-text);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* ===================== TESTIMONIALS ===================== */
+  .testi-bg { background: #fff; }
+
+  .testi-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testi-card {
+    background: var(--light-bg);
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid #dde5f8;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .testi-card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow-hover); }
+
+  .testi-stars { color: #f59e0b; font-size: 17px; letter-spacing: 2px; }
+
+  .testi-card p {
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #dde5f8;
+  }
+
+  .testi-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    flex-shrink: 0;
+  }
+
+  .testi-name { font-weight: 700; color: var(--navy); font-size: 15px; }
+  .testi-loc { font-size: 12.5px; color: var(--grey-text); }
+
+  /* ===================== CONTACT/ABOUT ===================== */
+  .contact-bg { background: var(--light-bg); }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .about-col { display: flex; flex-direction: column; gap: 20px; }
+
+  .about-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .about-logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .about-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+
+  .about-col h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .about-col p {
+    color: var(--grey-text);
+    font-size: 15.5px;
+    line-height: 1.75;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .about-highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #374151;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+
+  .about-highlight i { color: var(--accent); width: 18px; }
+
+  .contact-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e8edf8;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .contact-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy);
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--light-bg);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .contact-item-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  .contact-item-body { display: flex; flex-direction: column; gap: 2px; }
+  .contact-item-label { font-size: 12px; color: var(--grey-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; }
+
+  .contact-item a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
+  }
+
+  .contact-item a:hover { color: var(--accent); }
+  .contact-item span { color: var(--navy); font-weight: 500; font-size: 15px; line-height: 1.5; }
+
+  .btn-green-lg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--whatsapp);
+    color: #fff;
+    padding: 15px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    margin-top: 4px;
+  }
+
+  .btn-green-lg:hover { background: var(--whatsapp-hover); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.4); }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: var(--navy-dark);
+    color: #e0e7ff;
+    padding: 60px 24px 0;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    text-decoration: none;
+  }
+
+  .footer-logo-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .footer-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .footer-tagline { font-size: 14px; color: #93c5fd; margin-bottom: 20px; font-style: italic; }
+
+  .footer-desc { font-size: 14px; line-height: 1.7; color: #9ca3af; max-width: 280px; }
+
+  .footer-col h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 14px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-links a::before { content: '→'; color: var(--accent); font-size: 12px; }
+  .footer-links a:hover { color: #fff; }
+
+  .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+  .footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .footer-contact-list li i { color: var(--accent); width: 16px; margin-top: 2px; }
+
+  .footer-contact-list a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact-list a:hover { color: #fff; }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p { font-size: 13.5px; color: #6b7280; }
+
+  .footer-socials { display: flex; gap: 10px; }
+
+  .social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .social-btn.wa { background: rgba(37,211,102,0.15); color: var(--whatsapp); }
+  .social-btn.email { background: rgba(37,99,235,0.15); color: #60a5fa; }
+  .social-btn:hover { transform: translateY(-2px); }
+  .social-btn.wa:hover { background: var(--whatsapp); color: #fff; }
+  .social-btn.email:hover { background: var(--accent); color: #fff; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta.desktop { display: none; }
+    .hamburger { display: flex; }
+    .services-grid { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .gadgets-banner { flex-direction: column; text-align: center; padding: 28px 24px; }
+    .footer-desc { max-width: 100%; }
+    .section { padding: 60px 20px; }
+    .hero { padding: 70px 20px 60px; }
+  }
+
+  @media (max-width: 480px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+  }
+
+  /* ===================== ANIMATIONS ===================== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .fade-up-1 { animation-delay: 0.1s; }
+  .fade-up-2 { animation-delay: 0.2s; }
+  .fade-up-3 { animation-delay: 0.35s; }
+  .fade-up-4 { animation-delay: 0.5s; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-microchip"></i></div>
+      <span class="nav-logo-text">DIVTECH</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gadgets">Gadgets &amp; Accessories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="https://wa.me/2348143842288" class="nav-cta desktop" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home" onclick="closeMobile()">Home</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#gadgets" onclick="closeMobile()">Gadgets &amp; Accessories</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <a href="https://wa.me/2348143842288" class="nav-cta" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-glow-left"></div>
+  <div class="hero-inner">
+    <div class="hero-badge fade-up fade-up-1">
+      <i class="fas fa-map-marker-alt"></i> Computer Village, Ikeja Lagos
+    </div>
+    <h1 class="fade-up fade-up-2">Expert Computer Repair &amp; <span>Tech Solutions</span> in Lagos</h1>
+    <p class="hero-sub fade-up fade-up-3">Fast, Affordable, and Reliable — Serving Computer Village, Ikeja and Beyond.</p>
+    <div class="hero-btns fade-up fade-up-4">
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-primary">
+        <i class="fas fa-tools"></i> Get Repair Help
+      </a>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-outline">
+        <i class="fas fa-shopping-bag"></i> Shop Gadgets &amp; Accessories
+      </a>
+    </div>
+    <div class="hero-trust fade-up fade-up-4">
+      <span class="trust-badge"><span>⚡</span> Quick Turnaround</span>
+      <span class="trust-badge"><span>✅</span> Affordable Rates</span>
+      <span class="trust-badge"><span>🔒</span> Trusted Experts</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section services-bg" id="services">
+  <div class="section-header reveal">
+    <span class="section-tag"><i class="fas fa-tools"></i> &nbsp;What We Do</span>
+    <h2>Our Services</h2>
+    <p>Everything your computer needs, under one roof.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">💻</div>
+      <h3>Laptop &amp; PC Repair</h3>
+      <p>Hardware faults, screen damage, motherboard issues and more. We diagnose fast and fix right.</p>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="service-link">
+        Learn More <i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">⚙️</div>
+      <h3>System Tune-Up &amp; Optimization</h3>
+      <p>Speed up your slow PC or laptop. Cleaning, optimization, and performance boost — like new, guaranteed.</p>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="service-link">
+        Learn More <i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">🔧</div>
+      <h3>Hardware Repair &amp; Replacement</h3>
+      <p>RAM, hard drive, keyboard, battery — we fix and replace with quality parts at fair prices.</p>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="service-link">
+        Learn More <i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">🪟</div>
+      <h3>Windows Reinstallation &amp; Upgrade</h3>
+      <p>Fresh Windows install or upgrade with all drivers ready. Clean, stable, and optimized for your machine.</p>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="service-link">
+        Learn More <i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">📦</div>
+      <h3>Software Installation &amp; Troubleshooting</h3>
+      <p>Install, configure and fix any software issues fast. Licensed software, antivirus, office suites and more.</p>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="service-link">
+        Learn More <i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">🛒</div>
+      <h3>Gadgets &amp; Accessories Sales</h3>
+      <p>Quality laptops, accessories, and peripherals at great prices. Available in store, ready to go.</p>
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="service-link">
+        Learn More <i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GADGETS ===================== -->
+<section class="section gadgets-bg" id="gadgets">
+  <div class="section-header reveal">
+    <span class="section-tag"><i class="fas fa-shopping-bag"></i> &nbsp;Tech Store</span>
+    <h2>Shop Gadgets &amp; Accessories</h2>
+    <p>Browse our range of quality tech products. Chat us on WhatsApp to order or inquire.</p>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card reveal">
+      <div class="product-img"><i class="fas fa-plug"></i></div>
+      <div class="product-body">
+        <h3>Laptop Chargers</h3>
+        <span class="product-tag"><i class="fas fa-circle" style="font-size:8px"></i> Available in store</span>
+        <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img"><i class="fas fa-network-wired"></i></div>
+      <div class="product-body">
+        <h3>USB Hubs</h3>
+        <span class="product-tag"><i class="fas fa-circle" style="font-size:8px"></i> Available in store</span>
+        <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img"><i class="fas fa-memory"></i></div>
+      <div class="product-body">
+        <h3>RAM Upgrades</h3>
+        <span class="product-tag"><i class="fas fa-circle" style="font-size:8px"></i> Available in store</span>
+        <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img"><i class="fas fa-mouse"></i></div>
+      <div class="product-body">
+        <h3>Wireless Mouse</h3>
+        <span class="product-tag"><i class="fas fa-circle" style="font-size:8px"></i> Available in store</span>
+        <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img"><i class="fas fa-sd-card"></i></div>
+      <div class="product-body">
+        <h3>Flash Drives</h3>
+        <span class="product-tag"><i class="fas fa-circle" style="font-size:8px"></i> Available in store</span>
+        <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img"><i class="fas fa-briefcase"></i></div>
+      <div class="product-body">
+        <h3>Laptop Bags</h3>
+        <span class="product-tag"><i class="fas fa-circle" style="font-size:8px"></i> Available in store</span>
+        <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="gadgets-banner reveal">
+    <p><strong>Can't find what you need?</strong><br>Chat us directly — we source it for you!</p>
+    <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green" style="white-space:nowrap;flex-shrink:0">
+      <i class="fab fa-whatsapp"></i> Chat Us Now
+    </a>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="section" id="why" style="background:#fff">
+  <div class="section-header reveal">
+    <span class="section-tag"><i class="fas fa-star"></i> &nbsp;Why Us</span>
+    <h2>Why Choose DIVTECH?</h2>
+    <p>We're not just repair technicians — we're your trusted tech partner in Lagos.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fas fa-trophy"></i></div>
+      <h3>Experienced Technicians</h3>
+      <p>Our team has hands-on experience with all brands and models — from budget laptops to high-end workstations.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fas fa-bolt"></i></div>
+      <h3>Fast Turnaround Time</h3>
+      <p>Most repairs are completed same-day or within 24 hours. We respect your time and productivity.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fas fa-naira-sign"></i></div>
+      <h3>Affordable Pricing</h3>
+      <p>Transparent, fair pricing with no hidden charges. Get premium service without breaking the bank.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h3>Centrally Located</h3>
+      <p>Find us at Computer Village, Ikeja — Lagos's largest tech hub. Easy to find, easy to reach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section testi-bg" id="testimonials" style="background:var(--light-bg)">
+  <div class="section-header reveal">
+    <span class="section-tag"><i class="fas fa-comments"></i> &nbsp;Customer Reviews</span>
+    <h2>What Our Customers Say</h2>
+    <p>Don't just take our word for it — hear from people we've helped.</p>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p>"My laptop was completely dead — black screen, wouldn't boot at all. DIVTECH diagnosed and fixed it the same day! The price was very reasonable and they explained everything to me. Highly recommended!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AO</div>
+        <div>
+          <div class="testi-name">Adebayo Okafor</div>
+          <div class="testi-loc"><i class="fas fa-map-marker-alt" style="font-size:10px;color:var(--accent)"></i> Ikeja, Lagos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p>"I needed a RAM upgrade and a Windows reinstall urgently before a work trip. They handled both within 2 hours and my laptop is now faster than ever. Real professionals at Computer Village!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">FN</div>
+        <div>
+          <div class="testi-name">Fatima Nwosu</div>
+          <div class="testi-loc"><i class="fas fa-map-marker-alt" style="font-size:10px;color:var(--accent)"></i> Surulere, Lagos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p>"Bought a USB hub and laptop bag from DIVTECH — great quality at a very fair price. The staff were patient and helped me choose the right accessories. I'll definitely be back for my next repair too!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">CE</div>
+        <div>
+          <div class="testi-name">Chidi Emeka</div>
+          <div class="testi-loc"><i class="fas fa-map-marker-alt" style="font-size:10px;color:var(--accent)"></i> Yaba, Lagos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT / CONTACT ===================== -->
+<section class="section contact-bg" id="about">
+  <div class="contact-inner">
+    <div class="about-col reveal">
+      <div class="about-logo">
+        <div class="about-logo-icon"><i class="fas fa-microchip"></i></div>
+        <span class="about-logo-text">DIVTECH</span>
+      </div>
+      <h2>Your Trusted Tech Partner in Lagos</h2>
+      <p>DIVTECH is a professional computer service and repair business based in the heart of Computer Village, Ikeja — Lagos's premier tech hub. We've been serving individuals, students, and businesses across Lagos with fast, affordable, and expert tech solutions.</p>
+      <p>From laptop screen repairs to system tune-ups, software installations to gadget sales, we handle it all under one roof. Our mission is simple: keep your tech working so you keep moving forward.</p>
+      <div class="about-highlights">
+        <div class="about-highlight"><i class="fas fa-check-circle"></i> Certified & experienced repair technicians</div>
+        <div class="about-highlight"><i class="fas fa-check-circle"></i> All major laptop and PC brands serviced</div>
+        <div class="about-highlight"><i class="fas fa-check-circle"></i> Genuine spare parts &amp; quality accessories</div>
+        <div class="about-highlight"><i class="fas fa-check-circle"></i> Same-day repairs available</div>
+        <div class="about-highlight"><i class="fas fa-check-circle"></i> Walk-in or chat us on WhatsApp first</div>
+      </div>
+    </div>
+
+    <div class="contact-card reveal" id="contact">
+      <h3><i class="fas fa-headset" style="color:var(--accent);margin-right:8px"></i> Get In Touch</h3>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+        <div class="contact-item-body">
+          <span class="contact-item-label">WhatsApp / Phone</span>
+          <a href="tel:+2348143842288">+234 814 384 2288</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+        <div class="contact-item-body">
+          <span class="contact-item-label">Email Address</span>
+          <a href="mailto:otehdivine12@gmail.com">otehdivine12@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="contact-item-body">
+          <span class="contact-item-label">Our Location</span>
+          <span>15a Francis Oremeji Street,<br>Computer Village, Ikeja,<br>Lagos State, Nigeria</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+        <div class="contact-item-body">
+          <span class="contact-item-label">Working Hours</span>
+          <span>Mon – Sat: 8:00 AM – 6:00 PM</span>
+        </div>
+      </div>
+
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="btn-green-lg">
+        <i class="fab fa-whatsapp" style="font-size:20px"></i> Chat Us on WhatsApp Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#home" class="footer-logo">
+        <div class="footer-logo-icon"><i class="fas fa-microchip"></i></div>
+        <span class="footer-logo-text">DIVTECH</span>
+      </a>
+      <p class="footer-tagline">Your Trusted Tech Partner</p>
+      <p class="footer-desc">Professional computer repair, gadgets &amp; accessories. Serving Computer Village, Ikeja and all of Lagos.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gadgets">Gadgets &amp; Accessories</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/2348143842288" target="_blank" rel="noopener">+234 814 384 2288</a>
+        </li>
+        <li>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:otehdivine12@gmail.com">otehdivine12@gmail.com</a>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>15a Francis Oremeji St, Computer Village, Ikeja, Lagos</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 DIVTECH. All Rights Reserved. | Computer Village, Ikeja, Lagos</p>
+    <div class="footer-socials">
+      <a href="https://wa.me/2348143842288" target="_blank" rel="noopener" class="social-btn wa" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:otehdivine12@gmail.com" class="social-btn email" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('active');
+  });
+
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('active');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth close mobile menu on link click
+  document.querySelectorAll('.mobile-menu a[href^="#"]').forEach(link => {
+    link.addEventListener('click', closeMobile);
+  });
+</script>
+</body>
+</html>
